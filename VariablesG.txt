@@ -1,0 +1,40 @@
+Variables Globales 
+
+	Struct Conciertos
+		Titulo
+		Fecha
+		Lugar
+		Direccion
+		Precios
+		Capacidad
+		Estacionamiento 
+
+>1.Admin
+	>Conciertos
+		1. Dar de alta conciertos
+		2. Dar de baja conciertos
+		3. Modificar concierto		
+	>Usuarios
+		1. Alta de Usuario
+		2. Baja de Usuario
+		3. Modificar Usuario
+>2.Usuario 
+	>Usuario
+		1. Registrarse
+		2. Loguearse
+	>Concierto
+		1. Buscar
+			a. MES
+			b. Disponible
+			c. Agotado
+		2. Catalogo en orden de fecha
+
+>3.Salir
+
+El Programa:
+1. Altas
+2. Bajas
+3. Catálogo
+4. Modificar*
+5. Salir
+//Todo debe ir con un repetir en este caso el ideal sería un Do-While
