@@ -5,9 +5,18 @@ Variables Globales
 		Fecha
 		Lugar
 		Direccion
+		Mayor18
 		Precios
 		Capacidad
 		Estacionamiento 
+	Struct Usuario
+		Nombre
+		Apellido
+		Edad
+		Telefono
+		Direccion
+
+
 
 >1.Admin
 	>Conciertos
@@ -27,6 +36,7 @@ Variables Globales
 			a. MES
 			b. Disponible
 			c. Agotado
+		1.1 Comprar boleto(s)
 		2. Catalogo en orden de fecha
 
 >3.Salir
