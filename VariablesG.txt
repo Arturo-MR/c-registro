@@ -2,7 +2,7 @@ Variables Globales
 
 	Struct Conciertos
 		Titulo
-		Fecha
+		Fecha**(Otra estructura para fecha)
 		Lugar
 		Direccion
 		Mayor18
