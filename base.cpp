@@ -3,24 +3,37 @@
 #include <stdlib.h>
 #include <string.h>
 //Funciones externas
-#include "admin.cpp";
+#include <C:\Users\Arturo\Documents\GitHub\c-registro\admin.cpp>; //Carpeta temporar
 //Estructuras (Todas Variables con MAYUSCULA INICIAL)
-typedef struct Conciertos //Solo para conciertos
+typedef struct Fecha
+{
+	int Dia;
+	int Mes;
+	int Ano;
+};
+typedef struct Conciertos {//Solo para conciertos
 	char Titulo[51];
+	Fecha RegFecha;//Revisar
 	char Lugar[51];
 	char Direccion[51];
 	int Mayor18;
 	float Precios;
 	int Capacidad;
 	int Estacionamiento;
-typedef struct Usuarios //Solo para Usuarios
+};
+typedef struct Usuarios {//Solo para Usuarios
 	char Nombre[31];
 	char Apellido[31];
 	int Edad;
 	int Telefono;
 	char Direccion;
+};
 //FIN ESTRUCTURAS 
-	
+//VARIABLES GLOBALES
+
+	Conciertos RegConciertos;
+	Usuarios RegUsuarios;
+//FIN VARIABLES GLOBALES
 int main(int argc, char *argv[])
 {
 
