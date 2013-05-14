@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include <string.h>
 //Funciones externas
-#include "C:\Users\Arturo\Documents\GitHub\c-registro\admin.cpp" //Carpeta temporar
+#include "admin.cpp" //Carpeta temporar
 
 //Estructuras (Todas Variables con MAYUSCULA INICIAL)
 typedef struct Fecha
