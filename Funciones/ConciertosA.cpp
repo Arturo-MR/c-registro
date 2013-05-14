@@ -2,6 +2,24 @@
 #include <math.h>
 #include <stdlib.h>
 #include <string.h>
+typedef struct Fecha
+{
+	int Dia;
+	int Mes;
+	int Ano;
+};
+typedef struct ConciertosT {//Solo para conciertos
+	char Titulo[51];
+	Fecha RegFecha;//Revisar
+	char Lugar[51];
+	char Direccion[51];
+	int Edad;
+	float Precios;
+	int Capacidad;
+	int Estacionamiento;
+};
+		FILE *Conciertos;
+		ConciertosT RegConciertos;
 //Esta Funcion la lee el Admin y es la que se encarga de todo en los Conciertos
 //Se Leen Funciones 
 void CrearConcierto();
@@ -41,7 +59,45 @@ void CrearConcierto(){
 	system("cls");
 	//Variables
 	char Desea;
+	Conciertos = fopen("Archivos//Conciertos.dat","a+b");
 	printf("[CREAR CONCIERTO]\n" );
+	do
+	{
+		system("cls");
+		fflush(stdin);
+		printf("Titulo:");
+		gets(RegConciertos.Titulo);
+		printf("\nFecha:");
+		fflush(stdin);
+		printf("\n>Dia:");
+		scanf("%d",&RegConciertos.RegFecha.Dia);
+		printf("\n>Mes:");
+		scanf("%d",&RegConciertos.RegFecha.Mes);
+		printf("\n>Anio:");
+		scanf("%d",&RegConciertos.RegFecha.Ano);
+		fflush(stdin);
+		printf("\nLugar:");
+		gets(RegConciertos.Lugar);
+		printf("\nDireccion:");
+		fflush(stdin);
+		gets(RegConciertos.Direccion);
+		printf("\nEdad Minima:");
+		scanf("%d",&RegConciertos.Edad);
+		printf("\nPrecio:");
+		scanf("%f",&RegConciertos.Precios);
+		printf("\nCapacidad Max Personas:");
+		scanf("%d",&RegConciertos.Capacidad);
+		printf("\nMax Estacionamiento:");
+		scanf("%d",&RegConciertos.Estacionamiento);
+		fwrite(&RegConciertos, sizeof(RegConciertos), 1, Conciertos);
+		fflush(stdin);
+		printf("\nOtra alta? (S/N)\n");
+		 scanf("%c",&Desea);
+		 // Desea = getchar();
+		 // Desea= toupper(Desea);
+		fflush(stdin);
+	} while (Desea == 'S' || Desea=='s');
+		fclose(Conciertos);
 	
 }
 

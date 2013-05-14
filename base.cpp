@@ -7,34 +7,34 @@
 #include "Funciones\User.cpp";
 
 //Estructuras (Todas Variables con MAYUSCULA INICIAL)
-typedef struct Fecha
-{
-	int Dia;
-	int Mes;
-	int Ano;
-};
-typedef struct ConciertosT {//Solo para conciertos
-	char Titulo[51];
-	Fecha RegFecha;//Revisar
-	char Lugar[51];
-	char Direccion[51];
-	int Mayor18;
-	float Precios;
-	int Capacidad;
-	int Estacionamiento;
-};
-typedef struct UsuariosT {//Solo para Usuarios
-	char Nombre[31];
-	char Apellido[31];
-	int Edad;
-	int Telefono;
-	char Direccion;
-};
+// typedef struct Fecha
+// {
+// 	int Dia;
+// 	int Mes;
+// 	int Ano;
+// };
+// typedef struct ConciertosT {//Solo para conciertos
+// 	char Titulo[51];
+// 	Fecha RegFecha;//Revisar
+// 	char Lugar[51];
+// 	char Direccion[51];
+// 	int Edad;
+// 	float Precios;
+// 	int Capacidad;
+// 	int Estacionamiento;
+// };
+ typedef struct UsuariosT {//Solo para Usuarios
+ 	char Nombre[31];
+ 	char Apellido[31];
+ 	int Edad;
+ 	int Telefono;
+ 	char Direccion;
+ };
 //FIN ESTRUCTURAS 
 //ARCHIVOS & VARIABLES GLOBALES 
-	FILE *Conciertos;
+	
 	FILE *Usuarios;
-	ConciertosT RegConciertos;
+
 	UsuariosT RegUsuarios;
 //FIN VARIABLES GLOBALES
 int main(int argc, char *argv[])
