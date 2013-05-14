@@ -3,7 +3,11 @@
 #include <stdlib.h>
 #include <string.h>
 //Funciones externas
-#include "admin.cpp" //Carpeta temporar
+
+#include "Funciones\admin.cpp";
+
+
+
 
 //Estructuras (Todas Variables con MAYUSCULA INICIAL)
 typedef struct Fecha
@@ -45,7 +49,15 @@ int main(int argc, char *argv[])
         printf("------------\n");
         printf("Opcion:");
         scanf("%d",&opc);
-        Admin();
+        switch (opc){
+        	case 1:
+        		Admin();
+        	break;
+
+        	case 2:
+
+        	break;
+        }
          
 		 system("PAUSE");	
   return 0;
