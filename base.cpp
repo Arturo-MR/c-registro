@@ -3,7 +3,8 @@
 #include <stdlib.h>
 #include <string.h>
 //Funciones externas
-#include <C:\Users\Arturo\Documents\GitHub\c-registro\admin.cpp>; //Carpeta temporar
+#include "C:\Users\Arturo\Documents\GitHub\c-registro\admin.cpp" //Carpeta temporar
+
 //Estructuras (Todas Variables con MAYUSCULA INICIAL)
 typedef struct Fecha
 {
@@ -35,8 +36,17 @@ typedef struct Usuarios {//Solo para Usuarios
 	Usuarios RegUsuarios;
 //FIN VARIABLES GLOBALES
 int main(int argc, char *argv[])
-{
-
+{       //variables
+        int opc;
+		printf("<Bienvenido a iTicket>\n");
+        printf("____________\n");
+        printf("| 1. Admin |\n");
+        printf("| 2. User  |\n");
+        printf("------------\n");
+        printf("Opcion:");
+        scanf("%d",&opc);
+        Admin();
+         
 		 system("PAUSE");	
   return 0;
 } //LUIS ARTURO MENDOZA & DAVID TOD
