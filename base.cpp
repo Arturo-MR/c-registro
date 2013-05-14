@@ -3,11 +3,7 @@
 #include <stdlib.h>
 #include <string.h>
 //Funciones externas
-
 #include "Funciones\admin.cpp";
-
-
-
 
 //Estructuras (Todas Variables con MAYUSCULA INICIAL)
 typedef struct Fecha
@@ -16,7 +12,7 @@ typedef struct Fecha
 	int Mes;
 	int Ano;
 };
-typedef struct Conciertos {//Solo para conciertos
+typedef struct ConciertosT {//Solo para conciertos
 	char Titulo[51];
 	Fecha RegFecha;//Revisar
 	char Lugar[51];
@@ -26,7 +22,7 @@ typedef struct Conciertos {//Solo para conciertos
 	int Capacidad;
 	int Estacionamiento;
 };
-typedef struct Usuarios {//Solo para Usuarios
+typedef struct UsuariosT {//Solo para Usuarios
 	char Nombre[31];
 	char Apellido[31];
 	int Edad;
@@ -34,10 +30,11 @@ typedef struct Usuarios {//Solo para Usuarios
 	char Direccion;
 };
 //FIN ESTRUCTURAS 
-//VARIABLES GLOBALES
-
-	Conciertos RegConciertos;
-	Usuarios RegUsuarios;
+//ARCHIVOS & VARIABLES GLOBALES 
+	FILE *Conciertos;
+	FILE *Usuarios;
+	ConciertosT RegConciertos;
+	UsuariosT RegUsuarios;
 //FIN VARIABLES GLOBALES
 int main(int argc, char *argv[])
 {       //variables

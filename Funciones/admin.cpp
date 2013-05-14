@@ -1,17 +1,19 @@
-#include "ConciertosA.cpp"
+#include "ConciertosA.cpp";
 
 void Admin(){
 	
 	//Variables
 	int pass,opc;
-	//Contraseña es 71
-	do
-	{
-	system("cls");
-	printf("Pass:");
-	scanf("%d",&pass);
+	//Contraseña es 71 (quitar comentario para usar)
 
-	} while (pass != 71); 
+		// do
+		// {
+		// system("cls");
+		// printf("Pass:");
+		// scanf("%d",&pass);
+
+		// } while (pass != 71); 
+	
 	//Termina Contraseña
 	system("cls");
 	printf("1. Ir a conciertos \n");
