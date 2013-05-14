@@ -4,6 +4,7 @@
 #include <string.h>
 //Funciones externas
 #include "Funciones\admin.cpp";
+#include "Funciones\User.cpp";
 
 //Estructuras (Todas Variables con MAYUSCULA INICIAL)
 typedef struct Fecha
@@ -52,6 +53,7 @@ int main(int argc, char *argv[])
         	break;
 
         	case 2:
+                 User();
 
         	break;
         }
