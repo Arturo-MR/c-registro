@@ -41,10 +41,10 @@ int main(int argc, char *argv[])
 {       //variables
         int opc;
 		printf("<Bienvenido a iTicket>\n");
-        printf("____________\n");
-        printf("| 1. Admin |\n");
-        printf("| 2. User  |\n");
-        printf("------------\n");
+        printf("-----------\n");
+        printf("  1. Admin \n");
+        printf("  2. User  \n");
+        printf("-----------\n");
         printf("Opcion:");
         scanf("%d",&opc);
         switch (opc){
