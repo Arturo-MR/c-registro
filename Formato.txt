@@ -9,12 +9,16 @@ Variables Globales
 		Precios
 		Capacidad
 		Estacionamiento 
+		Clave> Nueva
+		Activo> Nueva
 	Struct Usuario
 		Nombre
 		Apellido
 		Edad
 		Telefono
 		Direccion
+		Clave > Nueva
+		Activo > Nueva
 
 
 

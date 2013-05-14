@@ -17,6 +17,9 @@ typedef struct ConciertosT {//Solo para conciertos
 	float Precios;
 	int Capacidad;
 	int Estacionamiento;
+	int Clave;
+	int Activo;
+
 };
 		FILE *Conciertos;
 		ConciertosT RegConciertos;
@@ -59,6 +62,7 @@ void CrearConcierto(){
 	system("cls");
 	//Variables
 	char Desea;
+	RegConciertos.Clave = 0;
 	Conciertos = fopen("Archivos//Conciertos.dat","a+b");
 	printf("[CREAR CONCIERTO]\n" );
 	do
@@ -91,6 +95,8 @@ void CrearConcierto(){
 		scanf("%d",&RegConciertos.Estacionamiento);
 		fwrite(&RegConciertos, sizeof(RegConciertos), 1, Conciertos);
 		fflush(stdin);
+		RegConciertos.Clave++;
+		RegConciertos.Activo = 1;
 		printf("\nOtra alta? (S/N)\n");
 		 scanf("%c",&Desea);
 		 // Desea = getchar();
