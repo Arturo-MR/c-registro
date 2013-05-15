@@ -22,6 +22,9 @@
 // 	float Precios;
 // 	int Capacidad;
 // 	int Estacionamiento;
+ //   int Clave;
+//	int Activo;
+
 // };
  typedef struct UsuariosT {//Solo para Usuarios
  	char Nombre[31];
