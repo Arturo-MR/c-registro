@@ -49,7 +49,7 @@ void ConciertosA(){
 		switch (opc){
 		case 1:
 			CrearConcierto();
-			Catalogo();
+			Catalogo(); //Temporal
 		break;
 
 		case 2:
@@ -135,7 +135,7 @@ void EliminarConcierto(){
 	char Desea;
 	printf("Ingresa la Clave del Concierto que deseas Eliminar\n");
 	scanf("%d",&j);
-	Conciertos = fopen("Archivos//Conciertos.dat","a+b");
+	Conciertos = fopen("Archivos//Conciertos.dat","r+b");
 	fread(&RegConciertos, sizeof(RegConciertos), 1, Conciertos);
 	while (!feof(Conciertos)==1){
 		 fflush(stdin);
@@ -144,14 +144,16 @@ void EliminarConcierto(){
 			printf("Seguro Que Deseas Eliminar? (S/N) %s\n",RegConciertos.Titulo);
 			scanf("%c",&Desea);
 			
-			if (Desea =='S' || Desea =='s'){
-				 //fseek(Conciertos, sizeof(RegConciertos)*(j-1),0);
+			if (Desea =='S' || Desea =='s'){ //REVISAR
+				fseek(Conciertos, sizeof(RegConciertos)*(i),0);
 				
 				RegConciertos.Activo = 0;
 
 				fwrite(&RegConciertos, sizeof(RegConciertos), 1, Conciertos);
 				printf("Archivo Eliminado\n");
+				fflush(stdin);
 				system("PAUSE");
+				break;
 			}else{
 				printf("Archivo NO Eliminado\n");
 				system("PAUSE");
@@ -169,22 +171,29 @@ void EliminarConcierto(){
 	fclose(Conciertos);
 }
 
-void ModConcierto(){
-	system("cls");
+ void ModConcierto(){
+ 	system("cls");
+ 	// int opc;
+ 	// printf("Por favor ingrese la clave del concierto que deasea Modificar\n");
+ 	// scanf("%d",&opc);
+ 	// Conciertos = fopen("Archivos//Conciertos.dat","a+b");
+ 	// fread(&RegConciertos, sizeof(RegConciertos), 1, Conciertos);
+ 	
 
-}
+ }
 //Solo para pruebas podria mejorarse y utilizarse
 void Catalogo(){
-	Conciertos = fopen("Archivos//Conciertos.dat","r+b");
+	Conciertos = fopen("Archivos//Conciertos.dat","rb");
 	printf("Titulo     Fecha     Lugar     Precio Clave\n");
 	fread(&RegConciertos, sizeof(RegConciertos),1,Conciertos);
 	while(!feof(Conciertos)==1){
-		fflush(stdin);
-		if(RegConciertos.Activo == 1){
+		
+		 if(RegConciertos.Activo == 1){
 		printf("%-5s %5d %-5s %5.2f %d\n",RegConciertos.Titulo,RegConciertos.RegFecha.Mes,RegConciertos.Lugar,RegConciertos.Precios,RegConciertos.Activo );
-		fread(&RegConciertos, sizeof(RegConciertos),1,Conciertos);
-		fflush(stdin);
-	 }
+		
+		
+	  }
+	  fread(&RegConciertos, sizeof(RegConciertos),1,Conciertos);
 	}
 	fclose(Conciertos);
 

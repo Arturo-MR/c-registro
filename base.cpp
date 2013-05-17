@@ -4,7 +4,7 @@
 #include <string.h>
 //Funciones externas
 #include "Funciones\admin.cpp";
-#include "Funciones\User.cpp";
+//#include "Funciones\User.cpp";
 
 //Estructuras (Todas Variables con MAYUSCULA INICIAL)
 // typedef struct Fecha
@@ -26,19 +26,19 @@
 //	int Activo;
 
 // };
- typedef struct UsuariosT {//Solo para Usuarios
- 	char Nombre[31];
- 	char Apellido[31];
- 	int Edad;
- 	int Telefono;
- 	char Direccion;
- };
-//FIN ESTRUCTURAS 
-//ARCHIVOS & VARIABLES GLOBALES 
+//  typedef struct UsuariosT {//Solo para Usuarios
+//  	char Nombre[31];
+//  	char Apellido[31];
+//  	int Edad;
+//  	int Telefono;
+//  	char Direccion;
+//  };
+// //FIN ESTRUCTURAS 
+// //ARCHIVOS & VARIABLES GLOBALES 
 	
-	FILE *Usuarios;
+// 	FILE *Usuarios;
 
-	UsuariosT RegUsuarios;
+// 	UsuariosT RegUsuarios;
 //FIN VARIABLES GLOBALES
 int main(int argc, char *argv[])
 {       //variables
@@ -56,7 +56,7 @@ int main(int argc, char *argv[])
         	break;
 
         	case 2:
-                 User();
+                 //User();
 
         	break;
         }
