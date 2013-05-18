@@ -17,7 +17,7 @@ Variables Globales
 		Edad
 		Telefono
 		Direccion
-		Clave > Nueva
+		Clave (Id) > Nueva
 		Activo > Nueva
 
 

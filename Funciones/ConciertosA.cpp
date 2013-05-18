@@ -156,7 +156,7 @@ void EliminarConcierto(){
 		 fflush(stdin);
 		if (i==j)
 		{
-			printf("Seguro Que Deseas Eliminar? (S/N) %s\n",RegConciertos.Titulo);
+			printf("Seguro Que Deseas Eliminar %s? (S/N) \n",RegConciertos.Titulo);
 			scanf("%c",&Desea);
 			
 			if (Desea =='S' || Desea =='s'){ //REVISAR
