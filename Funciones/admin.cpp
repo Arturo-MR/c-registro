@@ -20,21 +20,27 @@ void Admin(){
 		// } while (pass != 71); 
 	
 	//Termina Contraseña
-	system("cls");
-	printf("1. Ir a conciertos \n");
-	printf("2. Ir a Usuarios\n");
-	scanf("%d",&opc);
-	switch (opc){
-		case 1:
+	
+	do
+	{
+		system("cls");
+		printf("1. Ir a conciertos \n");
+		printf("2. Ir a Usuarios\n");
+		printf("3. <-Regresar\n");
+		scanf("%d",&opc);
+		switch (opc){
+			case 1:
 
-			ConciertosA();
+				ConciertosA();
 
-		break;
+			break;
 
-		case 2:
+			case 2:
 
-			// UserA();
+				// UserA();
 
-		break;
-	}
+			break;
+		}
+	} while (opc != 3);
+	
 }

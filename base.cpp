@@ -43,24 +43,32 @@
 int main(int argc, char *argv[])
 {       //variables
         int opc;
-		printf("<Bienvenido a iTicket>\n");
-        printf("-----------\n");
-        printf("  1. Admin \n");
-        printf("  2. User  \n");
-        printf("-----------\n");
-        printf("Opcion:");
-        scanf("%d",&opc);
-        switch (opc){
-        	case 1:
-        		Admin();
-        	break;
+        do
+        {
+            system("cls");
+            printf("<Bienvenido a iTicket>\n");
+            printf("-----------\n");
+            printf("  1. Admin \n");
+            printf("  2. User  \n");
+            printf("  3. Salir\n");
+            printf("-----------\n");
+            printf("Opcion:");
+            scanf("%d",&opc);
+            switch (opc){
+                case 1:
+                    Admin();
+                break;
 
-        	case 2:
-                 //User();
+                case 2:
+                     //User();
 
-        	break;
-        }
-         
+                break;
+            }
+        } while (opc != 3);
+		
+         system("cls");
+         printf("Vuelve Pronto! =)\n");
+         printf("AUTORES: Arturo Mendoza & David Tod\n");
 		 system("PAUSE");	
   return 0;
 } //LUIS ARTURO MENDOZA & DAVID TOD

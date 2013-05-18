@@ -45,7 +45,7 @@ void ConciertosA(){
 	printf("2. Eliminar Concierto\n");
 	printf("3. Modificar Concierto\n");
 	printf("4. Catalogo\n");
-	printf("5. Salir\n");
+	printf("5. <-Regresar\n");
 	scanf("%d",&opc);
 	
 	//OPCIONES
