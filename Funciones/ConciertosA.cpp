@@ -162,11 +162,13 @@ void EliminarConcierto(){
 				RegConciertos.Activo = 0;
 
 				fwrite(&RegConciertos, sizeof(RegConciertos), 1, Conciertos);
+				system("cls");
 				printf("Archivo Eliminado\n");
 				fflush(stdin);
 				system("PAUSE");
 				break;
 			}else{
+				system("cls");
 				printf("Archivo NO Eliminado\n");
 				system("PAUSE");
 			}
