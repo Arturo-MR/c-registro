@@ -8,7 +8,7 @@ Variables Globales
 		Mayor18
 		Precios
 		Capacidad
-		Estacionamiento 
+		Estacionamiento > Se elimina reducir para reducir
 		Clave> Nueva
 		Activo> Nueva
 	Struct Usuario
@@ -52,3 +52,12 @@ El Programa:
 4. Modificar*
 5. Salir
 //Todo debe ir con un repetir en este caso el ideal sería un Do-While
+
+Titulo:
+Fecha
+Lugar:
+Direccion:
+Edad Minima:
+Precio:
+Capacidad Max Personas:
+Max Estacionamiento:
