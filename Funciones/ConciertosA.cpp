@@ -24,6 +24,7 @@ typedef struct ConciertosT {//Solo para conciertos
 };
 		FILE *Conciertos;
 		ConciertosT RegConciertos;
+		int id;	
 //Esta Funcion la lee el Admin y es la que se encarga de todo en los Conciertos
 //Se Leen Funciones 
 void Catalogo();
@@ -83,7 +84,7 @@ void CrearConcierto(){ //Corregir Clave
 	//Variables
 	char Desea;
 	int Cont=0,Lugar; //Num de conciertos
-	RegConciertos.Clave = 0;
+	// RegConciertos.Clave = 0;
 	Conciertos = fopen("Archivos\\Conciertos.dat","a+b");
 	printf("[CREAR CONCIERTO]\n" );
 	fread(&RegConciertos, sizeof(RegConciertos), 1, Conciertos);
@@ -117,7 +118,7 @@ void CrearConcierto(){ //Corregir Clave
 		// printf("\nMax Estacionamiento:");
 		// scanf("%d",&RegConciertos.Estacionamiento);
 		fflush(stdin);
-		RegConciertos.Clave = fseek(Conciertos, sizeof(RegConciertos),1);
+		RegConciertos.Clave = id++;
 		// Lugar = RegConciertos.Clave;
 		fflush(stdin);
 		RegConciertos.Activo = 1;
