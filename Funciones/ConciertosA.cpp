@@ -2,6 +2,7 @@
 #include <math.h>
 #include <stdlib.h>
 #include <string.h>
+
 typedef struct Fecha
 {
 	int Dia;
@@ -37,6 +38,7 @@ void ConciertosA(){
 	int opc;
 	do{
 	system("cls");
+	// printf("1. Crear Inicio de Agenda de Conciertos\n");
 	printf("1. Crear Concierto\n");
 	printf("2. Eliminar Concierto\n");
 	printf("3. Modificar Concierto\n");
@@ -47,10 +49,12 @@ void ConciertosA(){
 	//OPCIONES
 	
 		switch (opc){
-		case 1:
+		case 1:{
+
 			CrearConcierto();
-			Catalogo(); //Temporal
+			
 		break;
+	    }
 
 		case 2:
 
@@ -73,14 +77,17 @@ void ConciertosA(){
 
 }
 
-void CrearConcierto(){
+
+void CrearConcierto(){ //Corregir Clave
 	system("cls");
 	//Variables
 	char Desea;
-	int Cont=0; //Num de conciertos
+	int Cont=0,Lugar; //Num de conciertos
 	RegConciertos.Clave = 0;
 	Conciertos = fopen("Archivos//Conciertos.dat","a+b");
 	printf("[CREAR CONCIERTO]\n" );
+	fread(&RegConciertos, sizeof(RegConciertos), 1, Conciertos);
+
 	do
 	{
 		system("cls");
@@ -110,9 +117,12 @@ void CrearConcierto(){
 		printf("\nMax Estacionamiento:");
 		scanf("%d",&RegConciertos.Estacionamiento);
 		fflush(stdin);
-		RegConciertos.Clave++;
+		RegConciertos.Clave = fseek(Conciertos, sizeof(RegConciertos),1);
+		// Lugar = RegConciertos.Clave;
 		fflush(stdin);
 		RegConciertos.Activo = 1;
+		system("cls");
+		printf("La clave del Concierto %s es %d\n",RegConciertos.Titulo,RegConciertos.Clave );
 		//Aca se guarda
 		fwrite(&RegConciertos, sizeof(RegConciertos), 1, Conciertos);
 		
@@ -122,6 +132,7 @@ void CrearConcierto(){
 		 // Desea = getchar();
 		 // Desea= toupper(Desea);
 		fflush(stdin);
+
 	} while (Desea == 'S' || Desea=='s');
 		fclose(Conciertos);
 		
@@ -173,11 +184,35 @@ void EliminarConcierto(){
 
  void ModConcierto(){
  	system("cls");
- 	// int opc;
- 	// printf("Por favor ingrese la clave del concierto que deasea Modificar\n");
- 	// scanf("%d",&opc);
- 	// Conciertos = fopen("Archivos//Conciertos.dat","a+b");
- 	// fread(&RegConciertos, sizeof(RegConciertos), 1, Conciertos);
+ 	 int opc;
+ 	 printf("Por favor ingrese la clave del concierto que deasea Modificar\n");
+ 	 scanf("%d",&opc);
+ 	 Conciertos = fopen("Archivos//Conciertos.dat","rb");
+ 	 fread(&RegConciertos, sizeof(RegConciertos), 1, Conciertos);
+ 	 while(!feof(Conciertos)==1){
+
+ 	 	if (i==j){
+ 	 		printf("Por f\n");
+			printf("Seguro Que Deseas Eliminar? (S/N) %s\n",RegConciertos.Titulo);
+			scanf("%c",&Desea);
+			
+			if (Desea =='S' || Desea =='s'){ //REVISAR
+				fseek(Conciertos, sizeof(RegConciertos)*(i),0);
+				
+				RegConciertos.Activo = 0;
+
+				fwrite(&RegConciertos, sizeof(RegConciertos), 1, Conciertos);
+				printf("Archivo Eliminado\n");
+				fflush(stdin);
+				system("PAUSE");
+				break;
+			}else{
+				printf("Archivo NO Eliminado\n");
+				system("PAUSE");
+			}
+		}
+ 	 	
+ 	 }
  	
 
  }
@@ -189,7 +224,7 @@ void Catalogo(){
 	while(!feof(Conciertos)==1){
 		
 		 if(RegConciertos.Activo == 1){
-		printf("%-5s %5d %-5s %5.2f %d\n",RegConciertos.Titulo,RegConciertos.RegFecha.Mes,RegConciertos.Lugar,RegConciertos.Precios,RegConciertos.Activo );
+		printf("%-5s %5d %-5s %5.2f %d\n",RegConciertos.Titulo,RegConciertos.RegFecha.Mes,RegConciertos.Lugar,RegConciertos.Precios,RegConciertos.Clave );
 		
 		
 	  }
