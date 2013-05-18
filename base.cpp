@@ -2,7 +2,7 @@
 #include <math.h>
 #include <stdlib.h>
 #include <string.h>
-//Funciones externas
+//Funcio nes externas
 #include "Funciones\admin.cpp";
 //#include "Funciones\User.cpp";
 

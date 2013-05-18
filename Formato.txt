@@ -53,12 +53,11 @@ El Programa:
 5. Salir
 //Todo debe ir con un repetir en este caso el ideal sería un Do-While
 
->Campos de Concierto Actualizados
+>Campos de Concierto Actualizados	
 Titulo:
 Fecha
 Lugar:
-Direccion:
+Direccion: //PENDIENTE BORRAR
 Edad Minima:
 Precio:
 Capacidad Max Personas:
-Max Estacionamiento:

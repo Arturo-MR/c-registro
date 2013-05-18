@@ -23,6 +23,7 @@ typedef struct ConciertosT {//Solo para conciertos
 
 };
 		FILE *Conciertos;
+		FILE *ID;
 		ConciertosT RegConciertos;
 		int id;	
 //Esta Funcion la lee el Admin y es la que se encarga de todo en los Conciertos
@@ -70,7 +71,7 @@ void ConciertosA(){
 
 		case 4:
 			Catalogo();
-			system("PAUSE");
+			
 		break;
 	}
 	} while (opc !=5);
@@ -84,11 +85,9 @@ void CrearConcierto(){ //Corregir Clave
 	//Variables
 	char Desea;
 	int Cont=0,Lugar; //Num de conciertos
-	// RegConciertos.Clave = 0;
 	Conciertos = fopen("Archivos\\Conciertos.dat","a+b");
-	printf("[CREAR CONCIERTO]\n" );
-	fread(&RegConciertos, sizeof(RegConciertos), 1, Conciertos);
-
+	ID = fopen("Archivos\\ID.dat","r+b");
+	fread(&id, sizeof(id), 1, ID);
 	do
 	{
 		system("cls");
@@ -119,25 +118,26 @@ void CrearConcierto(){ //Corregir Clave
 		// scanf("%d",&RegConciertos.Estacionamiento);
 		fflush(stdin);
 		RegConciertos.Clave = id++;
-		// Lugar = RegConciertos.Clave;
 		fflush(stdin);
+		// fread(&id, 1, 1, ID);
 		RegConciertos.Activo = 1;
 		system("cls");
 		printf("La clave del Concierto %s es %d\n",RegConciertos.Titulo,RegConciertos.Clave );
 		//Aca se guarda
-		fwrite(&RegConciertos, sizeof(RegConciertos), 1, Conciertos);
-		
-		// Cont++;
+		fflush(stdin);
+		fwrite(&RegConciertos, sizeof(RegConciertos),1,Conciertos);
+		id = id*1;
+		//Guardar ID en otro doc
+		fseek(ID, sizeof(id)*0,0);
+		 fwrite(&id, sizeof(id),1,ID);
+		//FIN GUARDAR ID EN OTRO DOC (sobreescribir)
 		printf("\nOtra alta? (S/N)\n");
 		 scanf("%c",&Desea);
-		 // Desea = getchar();
-		 // Desea= toupper(Desea);
 		fflush(stdin);
-
+		fread(&id, sizeof(id), 0, ID);
 	} while (Desea == 'S' || Desea=='s');
 		fclose(Conciertos);
-		
-	
+		fclose(ID);
 }
 
 void EliminarConcierto(){
@@ -332,17 +332,19 @@ void EliminarConcierto(){
 
 void Catalogo(){
 	Conciertos = fopen("Archivos\\Conciertos.dat","rb");
-	printf("Titulo     Fecha     Lugar     Precio Clave\n");
+	system("cls");
+	printf("Titulo         Fecha        Lugar        EdadMIN   Precio   Capacidad  Clave\n");
 	fread(&RegConciertos, sizeof(RegConciertos),1,Conciertos);
 	while(!feof(Conciertos)==1){
 		
 		 if(RegConciertos.Activo == 1){
-		printf("%-5s %5d %-5s %5.2f %d\n",RegConciertos.Titulo,RegConciertos.RegFecha.Mes,RegConciertos.Lugar,RegConciertos.Precios,RegConciertos.Clave );
+   		printf("%-10s %5d/%2d/%4d    %-13s   %2d     %6.2f      %7d    %2d\n",RegConciertos.Titulo, RegConciertos.RegFecha.Dia,RegConciertos.RegFecha.Mes,RegConciertos.RegFecha.Ano,RegConciertos.Lugar,RegConciertos.Edad, RegConciertos.Precios,RegConciertos.Capacidad,RegConciertos.Clave);
 		
 		
 	  }
 	  fread(&RegConciertos, sizeof(RegConciertos),1,Conciertos);
 	}
 	fclose(Conciertos);
+	system("PAUSE");
 
 }
