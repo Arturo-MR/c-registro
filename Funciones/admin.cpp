@@ -24,9 +24,12 @@ void Admin(){
 	do
 	{
 		system("cls");
-		printf("1. Ir a conciertos \n");
-		printf("2. Ir a Usuarios\n");
-		printf("3. <-Regresar\n");
+		printf("----------------------\n");
+		printf("  1. Ir a conciertos  \n");
+		printf("  2. Ir a Usuarios    \n");
+		printf("  3. <-Regresar       \n");
+		printf("-----------------------\n");
+		printf("Opcion:");
 		scanf("%d",&opc);
 		switch (opc){
 			case 1:

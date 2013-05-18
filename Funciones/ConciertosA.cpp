@@ -41,11 +41,14 @@ void ConciertosA(){
 	do{
 	system("cls");
 	// printf("1. Crear Inicio de Agenda de Conciertos\n");
-	printf("1. Crear Concierto\n");
-	printf("2. Eliminar Concierto\n");
-	printf("3. Modificar Concierto\n");
-	printf("4. Catalogo\n");
-	printf("5. <-Regresar\n");
+	printf("-------------------------\n");
+	printf("  1. Crear Concierto     \n");
+	printf("  2. Eliminar Concierto  \n");
+	printf("  3. Modificar Concierto \n");
+	printf("  4. Catalogo            \n");
+	printf("  5. <-Regresar          \n");
+	printf("-------------------------\n");
+	printf("Opcion:");
 	scanf("%d",&opc);
 	
 	//OPCIONES
@@ -209,15 +212,18 @@ void EliminarConcierto(){
 				do
 				{
 				system("cls");
-				printf("Por Favor seleccione el campo que desea modificar\n");
-				printf("1. Titulo\n");
-				printf("2. Fecha\n");
-				printf("3. Lugar\n");
-				printf("4. Direccion\n");
-				printf("5. Edad Minima\n");
-				printf("6. Precio\n");
-				printf("7. Capacidad Max\n");
-				printf("8. GUARDAR CAMBIOS O SALIR\n");
+				printf("<Por Favor seleccione el campo que desea modificar>\n");
+				printf("------------------------\n");
+				printf("  1. Titulo             \n");
+				printf("  2. Fecha              \n");
+				printf("  3. Lugar              \n");
+				printf("  4. Direccion          \n");
+				printf("  5. Edad Minima        \n");
+				printf("  6. Precio             \n");
+				printf("  7. Capacidad Max      \n");
+				printf("  8. <GUARDAR CAMBIOS>  \n");
+				printf("------------------------\n");
+				printf("Opcion:");
 				fflush(stdin);
 				scanf("%d",&opc2);
 				
@@ -335,6 +341,7 @@ void EliminarConcierto(){
 void Catalogo(){
 	Conciertos = fopen("Archivos\\Conciertos.dat","rb");
 	system("cls");
+	printf("<Conciertos Registrados>\n");
 	printf("Titulo         Fecha        Lugar        EdadMIN   Precio   Capacidad  Clave\n");
 	fread(&RegConciertos, sizeof(RegConciertos),1,Conciertos);
 	while(!feof(Conciertos)==1){
