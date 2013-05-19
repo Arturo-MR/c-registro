@@ -4,7 +4,7 @@
 #include <string.h>
 //Funcio nes externas
 #include "Funciones\admin.cpp";
-//#include "Funciones\User.cpp";
+#include "Funciones\User.cpp";
 
 int main(int argc, char *argv[])
 {       //variables
@@ -26,7 +26,7 @@ int main(int argc, char *argv[])
                 break;
 
                 case 2:
-                     //User();
+                     User();
 
                 break;
             }
