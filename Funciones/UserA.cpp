@@ -4,7 +4,7 @@
 #include <stdlib.h>
 #include <string.h>
 //Funciones
-void ModificarU();
+void EliminarU();
 //Estructuras
 typedef struct UsuariosT {//Solo para Usuarios
   	char Nombre[31];
@@ -18,7 +18,7 @@ typedef struct UsuariosT {//Solo para Usuarios
   //Variables y Archivos
  	FILE *Usuarios;
  	UsuariosT RegUsuarios;
-void EliminarU(){//principal
+void UserA(){//principal
 
 	int opc;
 	printf("1. Crear Usuario\n");
@@ -48,10 +48,11 @@ void EliminarU(){//principal
 
 
  void EliminarU(){
+      int j;
  	system("cls");
  	printf("ID:");
  	scanf("%d",&j);
- 	while(!feof(Conciertos)==1){
+ 	while(!feof(Usuarios)==1){
 
  		fflush(stdin);
  		if (j==RegUsuarios.Id)
