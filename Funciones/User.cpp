@@ -1,100 +1,146 @@
+//
+//  main.c
+//  User
+//
+//  Created by Davixx Tod on 18/05/13.
+//  Copyright (c) 2013 David Soto. All rights reserved.
+//
+
 #include <stdio.h>
+
 #include <math.h>
+
 #include <stdlib.h>
+
 #include <string.h>
 
-//Funciones
+
+//FUNCIONES
+void RegUsuarios();
 void Catalogo();
 
 
 
+//ESTRUCTURAS
 
-void User(){
-
-     
-     //Estructuras
- typedef struct Fecha
- {
- 	int Dia;
- 	int Mes;
- 	int Ano;
- };
- 
-         
- typedef struct RegistroUser {
- 	char Nombre[31];
- 	Fecha RegFecha;
- 	char Direccion[51];
- 	int Edad;
+typedef struct Persona{
+    
+    char Nombre[31];
+    char Apellido[31];
+    int Edad;
+    char Direccion[50];
+    int Telefono;
     int Clave;
-	int Activo;
+    int Activo;
+    
+};
 
- };
-	//Variables
-	int opc;
-	
-	do{
-	system("cls");
-	printf("1. Registrarse\n");
-	printf("2. Buscar concierto\n");
-	scanf("%d",&opc);
-	
-	}while(opc!=3);
-	
-	//OPCIONES
-	
-		switch (opc){
-               
-		case 1:
+//VARIABLES
+Persona RegUser;
+FILE *Usuarios;
 
 
-		break;
-
-		case 2:
-             
-
-        system("PAUSE");
-		break;
 
 
-	
+//PRINCIPAL
+int main(){
+    
+    //VARIABLES
+    int opc;
+    
+    //MENU PRINCIPAL USER
+    
+    do{
+        
+        system("cls");
+        printf("1. REGRISTRO \n");
+        printf("2. BUSCAR CONCIERTOS\n");
+        printf("3. SALIR\n");
+        printf("\nELIJA UNA OPCION: ");
+        scanf("%d",&opc);
+        //system("cls");
+        
+        
+        
+        //SWITCH
+        switch (opc){
+                
+                
+                
+            case 1: //REGISTRO
+                
+                RegUsuarios();
+                
+                break;
+                
+                
+            case 2: //BUSCAR CONCIERTOS
+                
+                Catalogo();
+                
+                
+                break;
+        }
+        
+    }while (opc!=3);
+    
 }
-}
 
-void Registro(){
-     
+
+
+
+
+
+//FUNCION REGISTRAR USUARIOS
+
+void RegUsuarios(){
+    
+    //VARIABLES
     char Desea;
-	system("cls");
-	do
-	{
-		system("cls");
-		fflush(stdin);
-		printf("Elige una clave: ");
-		scanf("%d",&RegistroUser.Clave);
-		printf("Nombre: ");
-		gets(RegistroUser.Nombre);
-		printf("\nFecha de Nacimiento:");
-		fflush(stdin);
-		printf("\n>Dia: ");
-		scanf("%d",&RegistroUser.RegFecha.Dia);
-		printf("\n>Mes: ");
-		scanf("%d",&RegistroUser.RegFecha.Mes);
-		printf("\n>Anio: ");
-		scanf("%d",&RegistroUser.RegFecha.Ano);
-		fflush(stdin);
-		printf("\nDireccion: ");
-		fflush(stdin);
-		gets(RegistroUser.Direccion);
-		fflush(stdin);
-		RegistroUser.Clave++;
-		fflush(stdin);
-		RegistroUser.Activo = 1;
+    
+    //INSTRUCCIONES
+    Usuarios= fopen("C:\\Users\\David Tod\\Documents\\GitHub\\c-registro\\Archivos\\Usuarios.dat","r+b");
+    
+    
+    do{
+        
+        system("cls");
+        printf("REGISTRO\n");
+        printf("\nNombre: ");
+        fflush(stdin);
+        gets(RegUser.Nombre);
+        printf("\nApellido: ");
+        gets(RegUser.Apellido);
+        printf("\nEdad: ");
+        scanf("%d",&RegUser.Edad);
+        printf("\nDireccion: ");
+        fflush(stdin);
+        gets(RegUser.Direccion);
+        printf("\nTelefono: ");
+        scanf("%d",&RegUser.Telefono);
+        
+        //GUARDAR ARCHIVO
+        fwrite(&RegUser, sizeof(RegUser),1,Usuarios);
+        
+        system("cls");
+        printf("DESEA PROCESAR OTRO USUARIO (s/n)?: \n");
+        fflush(stdin);
+        Desea=getchar();
+    }while (Desea == 's');
+    fclose(Usuarios);
+    
+}
 
-		printf("\nOtra alta? (S/N): \n");
-	    scanf("%c",&Desea);
-	    Desea = getchar();
-		fflush(stdin);
-	    }while(Desea == 'S' || Desea=='s');
+//FUNCION CATALOGO
+
+void Catalogo(){
      
 
-     
+    
+    
+    
+    
+    
+    
+}
+
