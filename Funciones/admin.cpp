@@ -41,7 +41,7 @@ void Admin(){
 
 			case 2:
 
-				// UserA();
+				 UserA();
 
 			break;
 		}

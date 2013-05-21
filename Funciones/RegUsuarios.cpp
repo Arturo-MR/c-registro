@@ -58,6 +58,7 @@ void RegUsuarios(){
 		RegUser.Id = id2++;
 		RegUser.Activo = 1;
 		printf("La clave del Usuario %s es %d\n",RegUser.Nombre,RegUser.Id);
+        system("PAUSE");
 		//GUARDAR REGISTRO
 		fflush(stdin);
         fwrite(&RegUser, sizeof(RegUser),1,Usuarios);
