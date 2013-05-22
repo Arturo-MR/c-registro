@@ -6,9 +6,9 @@
 
 #include <string.h>
 
-#include "RegUsuarios.cpp";
+#include "RegUsuarios.cpp"
 
-#include "ModUsuarios.cpp";
+#include "ModUsuarios.cpp"
 
 //#include "Catalogo.cpp";
 

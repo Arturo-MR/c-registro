@@ -6,9 +6,8 @@
 
 #include <string.h>
 
+
 void RegUsuarios(){
-    
-    //ESTRUCTURAS
     
     typedef struct Persona{
         
@@ -32,7 +31,7 @@ void RegUsuarios(){
     char Desea;
     
     //INSTRUCCIONES
-    Usuarios= fopen("Archivos\\Usuarios.dat","a+b");
+    Usuarios = fopen("Archivos\\Usuarios.dat","a+b");
     ID2 = fopen("Archivos\\ID2.dat","r+b");
 	fread(&id2, sizeof(id2), 1, ID2);
     

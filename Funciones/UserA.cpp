@@ -3,8 +3,9 @@
 #include <math.h>
 #include <stdlib.h>
 #include <string.h>
-#include "ModUsuarios.cpp";
-#include "RegUsuarios.cpp";
+//#include "RegUsuarios.cpp"
+//#include "ModUsuarios.cpp"
+
 //Funciones
 //void EliminarU();
 //Estructuras
@@ -18,8 +19,8 @@ typedef struct UsuariosT {//Solo para Usuarios
   	int Activo;
   };
   //Variables y Archivos
- 	FILE *Usuarios;
- 	UsuariosT RegUsuarios;
+ 	//FILE *Usuarios;
+ 	UsuariosT RegUs;
 void UserA(){//principal
 
 	int opc;
@@ -33,7 +34,7 @@ void UserA(){//principal
 		case 1:
 		//Funcion Crear(David)
 
-			RegUsuarios();
+			//RegUsuarios();
 		break;
 
 		case 2:
@@ -44,7 +45,7 @@ void UserA(){//principal
 		case 3:
 		//Funcion Modificar(David)
 
-			ModUsuario();
+		      //ModUsuario();
 		break;
 	}
 

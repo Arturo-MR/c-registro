@@ -1,8 +1,9 @@
+#include <windows.h>
 #include <stdio.h>
 #include <math.h>
 #include <stdlib.h>
 #include <string.h>
-#include "Catalogo.cpp";
+#include "Catalogo.cpp"
 
 // typedef struct Fecha
 // {

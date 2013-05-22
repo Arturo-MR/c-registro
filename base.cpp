@@ -1,13 +1,15 @@
+#include <windows.h>
 #include <stdio.h>
 #include <math.h>
 #include <stdlib.h>
 #include <string.h>
 //Funcio nes externas
-#include "Funciones\admin.cpp";
-#include "Funciones\User.cpp";
+#include "Funciones\admin.cpp"
+#include "Funciones\User.cpp"
 
 int main(int argc, char *argv[])
 {       //variables
+
         int opc;
         do
         {
