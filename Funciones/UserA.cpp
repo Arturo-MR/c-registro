@@ -19,7 +19,7 @@ typedef struct UsuariosT {//Solo para Usuarios
   	int Activo;
   };
   //Variables y Archivos
- 	//FILE *Usuarios;
+ 	FILE *Usuarios;
  	UsuariosT RegUs;
 void UserA(){//principal
 

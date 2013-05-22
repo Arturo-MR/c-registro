@@ -8,6 +8,9 @@
 
 //FUNCION MODIFCAR USUARIO
 void ModUsuario(){
+    
+    //ESTRUCTURAS
+    
     typedef struct Persona{
         
         char Nombre[31];
@@ -23,12 +26,9 @@ void ModUsuario(){
     //VARIABLES
     FILE *Usuario;
     int opc,opc2,i,j;
-    
-    Persona RegUser;
-    
-    //ESTRUCTURAS
-     i=0;
+    i=0;
     char Desea;
+     Persona RegUser;
     
  	Usuario = fopen("Archivos\\Usuarios.dat","r+b");
  	system("cls");

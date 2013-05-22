@@ -78,3 +78,4 @@ void RegUsuarios(){
 	fclose(ID2);
     
 }
+

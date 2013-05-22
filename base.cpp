@@ -22,7 +22,7 @@ int main(int argc, char *argv[])
             printf("-------------\n");
             printf("Opcion:");
             scanf("%d",&opc);
-            switch (opc){
+            switch (opc){    
                 case 1:
                     Admin();
                 break;
