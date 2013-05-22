@@ -2,19 +2,23 @@ Variables Globales
 
 	Struct Conciertos
 		Titulo
-		Fecha
+		Fecha**(Otra estructura para fecha)
 		Lugar
 		Direccion
 		Mayor18
 		Precios
 		Capacidad
-		Estacionamiento 
+		Estacionamiento > Se elimina reducir para reducir
+		Clave> Nueva
+		Activo> Nueva
 	Struct Usuario
 		Nombre
 		Apellido
 		Edad
 		Telefono
 		Direccion
+		Clave (Id) > Nueva
+		Activo > Nueva
 
 
 
@@ -48,3 +52,12 @@ El Programa:
 4. Modificar*
 5. Salir
 //Todo debe ir con un repetir en este caso el ideal sería un Do-While
+
+>Campos de Concierto Actualizados	
+Titulo:
+Fecha
+Lugar:
+Direccion: //PENDIENTE BORRAR
+Edad Minima:
+Precio:
+Capacidad Max Personas:
