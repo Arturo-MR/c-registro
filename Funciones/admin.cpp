@@ -12,13 +12,13 @@ void Admin(){
 	int pass,opc;
 	//Contraseña es 71 (quitar comentario para usar)
 
-		// do
-		// {
-		// system("cls");
-		// printf("Pass:");
-		// scanf("%d",&pass);
+		 do
+		 {
+		 system("cls");
+		 printf("Pass:");
+		 scanf("%d",&pass);
 
-		// } while (pass != 71); 
+		 } while (pass != 71); 
 	
 	//Termina Contraseña
 	

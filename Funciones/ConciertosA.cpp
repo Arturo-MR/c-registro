@@ -5,26 +5,6 @@
 #include <string.h>
 #include "Catalogo.cpp"
 
-// typedef struct Fecha
-// {
-// 	int Dia;
-// 	int Mes;
-// 	int Ano;
-// };
-// typedef struct ConciertosT {//Solo para conciertos
-// 	char Titulo[51];
-// 	Fecha RegFecha;//Revisar
-// 	char Lugar[51];
-// 	char Direccion[51];
-// 	int Edad;
-// 	float Precios;
-// 	int Capacidad;
-// 	int Estacionamiento;
-// 	int Clave;
-// 	int Activo;
-
-// };
-// 		FILE *Conciertos;
  		FILE *ID;
 // 		ConciertosT RegConciertos;
 		int id;	
@@ -98,24 +78,34 @@ void CrearConcierto(){ //Corregir Clave
 		fflush(stdin);
 		printf("Titulo:");
 		gets(RegConciertos.Titulo);
+		system("cls");
 		printf("\nFecha:");
 		fflush(stdin);
-		printf("\n>Dia:");
-		scanf("%d",&RegConciertos.RegFecha.Dia);
-		printf("\n>Mes:");
-		scanf("%d",&RegConciertos.RegFecha.Mes);
-		printf("\n>Anio:");
-		scanf("%d",&RegConciertos.RegFecha.Ano);
+		do
+		{	system("cls");
+			printf("<Introducir Fecha Valida>\n");
+			printf("\n>Dia:");
+			scanf("%d",&RegConciertos.RegFecha.Dia);
+			printf("\n>Mes:");
+			scanf("%d",&RegConciertos.RegFecha.Mes);
+			printf("\n>Anio:");
+			scanf("%d",&RegConciertos.RegFecha.Ano);
+		} while (RegConciertos.RegFecha.Dia>31 || RegConciertos.RegFecha.Mes>12 || RegConciertos.RegFecha.Ano<2013);
 		fflush(stdin);
+		system("cls");
 		printf("\nLugar:");
 		gets(RegConciertos.Lugar);
+		system("cls");
 		printf("\nDireccion:");
 		fflush(stdin);
 		gets(RegConciertos.Direccion);
+		system("cls");
 		printf("\nEdad Minima:");
 		scanf("%d",&RegConciertos.Edad);
+		system("cls");
 		printf("\nPrecio:");
 		scanf("%f",&RegConciertos.Precios);
+		system("cls");
 		printf("\nCapacidad Max Personas:");
 		scanf("%d",&RegConciertos.Capacidad);
 		// printf("\nMax Estacionamiento:");
@@ -175,6 +165,7 @@ void EliminarConcierto(){
 				system("cls");
 				printf("Archivo NO Eliminado\n");
 				system("PAUSE");
+				break;
 			}
 		}
 		 // else{
@@ -241,16 +232,19 @@ void EliminarConcierto(){
 					
 
 					case 2://Fecha
+																
 						fflush(stdin);
-						system("cls");						
-						printf("Nueva Fecha:");
-						printf(">\nDia:");
-						scanf("%d",&RegConciertos.RegFecha.Dia);
-						printf(">\nMes:");
-						scanf("%d",&RegConciertos.RegFecha.Mes);
-						printf(">\nAnio:");
-						scanf("%d",&RegConciertos.RegFecha.Ano);
-						system("PAUSE");
+						do
+						{	system("cls");
+							printf("Nueva Fecha\n");
+							printf("<Introducir Fecha Valida>\n");
+							printf("\n>Dia:");
+							scanf("%d",&RegConciertos.RegFecha.Dia);
+							printf("\n>Mes:");
+							scanf("%d",&RegConciertos.RegFecha.Mes);
+							printf("\n>Anio:");
+							scanf("%d",&RegConciertos.RegFecha.Ano);
+						} while (RegConciertos.RegFecha.Dia>31 || RegConciertos.RegFecha.Mes>12 || RegConciertos.RegFecha.Ano<2013);
 
 					break;
 					

@@ -18,10 +18,10 @@
 void User(){
     
     //VARIABLES
-    int opc,opc2;
+    int opc,opc2,j;
     
     //MENU PRINCIPAL USER
-    
+    system("cls");
     printf("1. Registro\n");
     printf("2. Loguearse\n");
     printf("ELIJA UNA OPCION \n");
@@ -33,45 +33,16 @@ void User(){
                 
            RegUsuarios();
                 
-                break;
+          break;
            
            case 2:
            
-           do{
-        
-        system("cls");
-        printf("1. MODIFICAR PERFIL \n");
-        printf("2. BUSCAR CONCIERTOS \n");
-        printf("3. <- REGRESAR\n");
-        printf("\nELIJA UNA OPCION: ");
-        scanf("%d",&opc2);
-
-        
-        
-        
-        //SWITCH 2
-        switch (opc2){
-                
-            case 1: //FUNCION MODIFICAR Usuario
-                
-                ModUsuario();
-                
-                break;
-                
-                
-            case 2: //FUNCION CATALOGO                               
-    
-                Catalogo();
-                
-                break;
-        }
-        
-    }while (opc2!=3);
+           Log();
            
            break;
            
            }
-           }
+          }
            
            //FIN SWITCH 2
 

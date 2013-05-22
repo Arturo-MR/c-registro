@@ -7,6 +7,7 @@
 #include "Funciones\admin.cpp"
 #include "Funciones\User.cpp"
 
+
 int main(int argc, char *argv[])
 {       //variables
 
@@ -14,7 +15,7 @@ int main(int argc, char *argv[])
         do
         {
             system("cls");
-            printf("<Bienvenido a iTicket>\n");
+            printf("  <<< Bienvenido a iTicket >>>  \n");
             printf("-------------\n");
             printf("|  1. Admin | \n");
             printf("|  2. User  | \n");
@@ -35,8 +36,8 @@ int main(int argc, char *argv[])
         } while (opc != 3);
 		
          system("cls");
-         printf("Vuelve Pronto! =)\n");
-         printf("AUTORES: Arturo Mendoza & David Tod\n");
+         printf("Vuelve Pronto! =) \n");
+         printf("AUTORES:Luis Arturo Mendoza && DAVID TOD\n");
 		 system("PAUSE");	
   return 0;
 } //LUIS ARTURO MENDOZA & DAVID TOD
