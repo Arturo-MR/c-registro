@@ -2,8 +2,8 @@
 #include <math.h>
 #include <stdlib.h>
 #include <string.h>
-#include "RegUsuarios.cpp"
-#include "ModUsuarios.cpp"
+// #include "RegUsuarios.cpp"
+// #include "ModUsuarios.cpp"
 //#include "Catalogo.cpp"
 
 //#include "Catalogo.cpp";

@@ -3,6 +3,7 @@
 #include <math.h>
 #include <stdlib.h>
 #include <string.h>
+#include "UserF.cpp"
 //#include "RegUsuarios.cpp"
 //#include "ModUsuarios.cpp"
 
@@ -34,7 +35,7 @@ void UserA(){//principal
 		case 1:
 		//Funcion Crear(David)
 
-			//RegUsuarios();
+			RegUsuarios();
 		break;
 
 		case 2:
@@ -45,7 +46,7 @@ void UserA(){//principal
 		case 3:
 		//Funcion Modificar(David)
 
-		      //ModUsuario();
+		      ModUsuario();
 		break;
 	}
 

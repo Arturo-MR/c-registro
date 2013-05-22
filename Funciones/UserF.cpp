@@ -1,17 +1,10 @@
+#include <windows.h>
 #include <stdio.h>
-
 #include <math.h>
-
 #include <stdlib.h>
-
 #include <string.h>
-
-//FUNCION MODIFCAR USUARIO
-void ModUsuario(){
-    
-    //ESTRUCTURAS
-    
-    typedef struct Persona{
+//Estructuras
+typedef struct Persona{
         
         char Nombre[31];
         char Apellido[31];
@@ -22,17 +15,19 @@ void ModUsuario(){
         int Activo;
         
     };
-    
-    //VARIABLES
+    //Variables
     FILE *Usuario;
+    FILE *ID2;
+    Persona RegUser;
+    int id2;
+
+void ModUsuario(){
+    system("cls");
     int opc,opc2,i,j;
     i=0;
     char Desea;
-     Persona RegUser;
-    
  	Usuario = fopen("Archivos\\Usuarios.dat","r+b");
  	system("cls");
-    
     printf("Por favor ingrese la clave del usuario que deasea Modificar.\n");
     scanf("%d",&j);
     fflush(stdin);
@@ -149,3 +144,55 @@ void ModUsuario(){
  	fclose(Usuario);
     
 }//Fin funcion
+
+void RegUsuarios(){
+    system("cls");
+    //VARIABLES
+    char Desea;
+    
+    //INSTRUCCIONES
+    Usuario = fopen("Archivos\\Usuarios.dat","a+b");
+    ID2 = fopen("Archivos\\ID2.dat","r+b");
+	fread(&id2, sizeof(id2), 1, ID2);
+    do{
+        
+        system("cls");
+        printf("REGISTRO\n");
+        printf("\nNombre: ");
+        fflush(stdin);
+        gets(RegUser.Nombre);
+        printf("\nApellido: ");
+        gets(RegUser.Apellido);
+        printf("\nEdad: ");
+        scanf("%d",&RegUser.Edad);
+        printf("\nDireccion: ");
+        fflush(stdin);
+        gets(RegUser.Direccion);
+        printf("\nTelefono: ");
+        scanf("%d",&RegUser.Telefono);
+        
+        fflush(stdin);
+		RegUser.Id = id2++;
+		RegUser.Activo = 1;
+		printf("La clave del Usuario %s es %d\n",RegUser.Nombre,RegUser.Id);
+        system("PAUSE");
+		//GUARDAR REGISTRO
+		fflush(stdin);
+        fwrite(&RegUser, sizeof(RegUser),1,Usuario);
+		id2 = id2*1;
+		//Guardar ID
+		fseek(ID2, sizeof(id2)*0,0);
+        fwrite(&id2, sizeof(id2),1,ID2);
+        
+        //GUARDAR ARCHIVO
+        
+        system("cls");
+        printf("DESEA PROCESAR OTRO USUARIO (s/n)?: \n");
+        fflush(stdin);
+        Desea=getchar();
+        fread(&id2, sizeof(id2), 0, ID2);
+    }while (Desea == 's');
+    fclose(Usuario);
+	fclose(ID2);
+    
+}
